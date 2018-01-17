@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html width="100%" height="100%">
+  <head>
+    <meta charset="utf-8">
+    <title>Alert powered by Hyperapp</title>
+
+    <link href="https://unpkg.com/picnic" rel="stylesheet">
+    <link rel="stylesheet" href="prism-coy.css">
+    <script type="text/javascript"  src="prism.js"></script>
+
+    <link rel="stylesheet" href="dist/alert.css">
+    <script type="text/javascript"  src="dist/alert.js"></script>
+  </head>
+  <body width="100%" height="100%">
+      
+    <main>
+        <section style="display: flex; align-items: center; flex-direction: column;">
+            <div>
+                <h1>Fabulous yet Flexible Alert </h1>
+                <pre>
+                    <code class="language-javascript">
+                    alert({
+                        header: {
+                            text: 'Heads Up!'
+                        },
+                        body: {
+                            text: 'This is an alert dialog'
+                        },
+                        footer: {
+                            confirm: {
+                                text: 'OK!'
+                            }
+                        }
+                    })
+                    </code>
+                </pre>
+                <button 
+                    onclick='showAlert()'
+                    style="color: #fff; background: linear-gradient(#AE00FF, #8B00CC);">Alert</button>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function showAlert() {
+            alert({
+                header: {
+                    text: 'Heads Up!'
+                },
+                body: {
+                    text: 'This is an alert dialog'
+                },
+                footer: {
+                    confirm: {
+                        text: 'OK!'
+                    }
+                }
+            })
+        }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,244 @@
+$box-shadow: 0 2px 5px 0 rgba(0,0,0,.2);
+$padding-base: 12px;
+$success-color: rgba(76, 175, 80, .9);
+$danger-color: rgba(244, 67, 54, .8);
+$text-color: rgba(0, 0, 0, .8);
+$border-radius: 1px;
+
+.alertify-logs {
+    > * {
+        padding: $padding-base $padding-base * 2;
+        color: #fff;
+        box-shadow: $box-shadow;
+        border-radius: $border-radius;
+        &, &.default {
+            background: rgba(0, 0, 0, .8);
+        }
+        &.error {
+          background: $danger-color;
+        }
+        &.success {
+          background: $success-color;
+        }
+    }
+}
+
+.alertify {
+
+    position: fixed;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpCMEM4NDgzQjlDRTNFMTExODE4NUVDOTdFQ0I0RDgxRSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGREU5OEVCQzAzMjYxMUUyOTg5OURDMDlDRTJDMTc0RSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGREU5OEVCQjAzMjYxMUUyOTg5OURDMDlDRTJDMTc0RSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkIxQzg0ODNCOUNFM0UxMTE4MTg1RUM5N0VDQjREODFFIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkIwQzg0ODNCOUNFM0UxMTE4MTg1RUM5N0VDQjREODFFIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+s3YRAQAAABtJREFUeNpiFODh2cBABGBiIBKMKqSOQoAAAwBokQDs5F/8FAAAAABJRU5ErkJggg==');
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+
+    &.hide {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    &, &.show {
+        box-sizing: border-box;
+        transition: all .33s cubic-bezier(.25, .8, .25, 1);
+    }
+
+    &, * {
+        box-sizing: border-box;
+    }
+
+    .dialog {
+       padding: 12px;
+    }
+
+    .dialog, .alert {
+
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+
+        > * {
+            width: 350px;
+            max-width: 95%;
+            margin: 0 auto;
+            text-align: center;
+            background: #fff;
+            font-size: 15px;
+            box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+        }
+
+        .header {
+            font-size: 15px;
+            text-align: center;
+            padding: 17px 35px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            border-bottom: 1px solid #fff;
+            background: linear-gradient(#8815A7, #5D0F73);
+            color: #FFF;
+        }
+
+        .msg {
+            font-size: 15px;
+            line-height: 20px;
+            color: rgba(0, 0, 0, 0.9);
+            margin: 25px 20px;
+            text-align: center;
+        }
+
+        input:not(.form-control){
+            margin-bottom: 15px;
+            width: 100%;
+            font-size: 100%;
+            padding: $padding-base;
+            &:focus {
+                outline-offset: -2px;
+            }
+        }
+        .footer {
+
+            text-align: center;
+            margin: 20px 5px 0;
+            padding-bottom: 20px;
+
+            button:not(.btn):not(.pure-button):not(.md-button):not(.mdl-button) {
+              background: linear-gradient(#AE00FF, #8B00CC);
+              box-sizing: border-box;
+              color: #FFF;
+              position: relative;
+              outline: 0;
+              border: 0;
+              display: inline-block;
+              align-items: center;
+              padding: 8px 23px;
+              white-space: nowrap;
+              min-width: 88px;
+              text-align: center;
+              text-transform: uppercase;
+              font-size: 14px;
+              text-decoration: none;
+              cursor: pointer;
+              border: 1px solid transparent;
+              border-radius: 5px;
+              
+
+              &:hover, &:active {
+                background: linear-gradient(#8b00cc, #680099);
+              }
+
+              &:focus {
+                  border: 1px solid rgba(0, 0, 0, .1);
+              }
+
+            }
+
+            button.btn {
+                margin: 6px 4px;
+            }
+
+        }
+    }
+}
+
+.alertify-logs {
+
+    position: fixed;
+    z-index: 99999;
+
+    &.bottom, &:not(.top) {
+        bottom: 16px;
+        // Bottom left placement. Default. Use for transitions.
+        &.left, &:not(.right) {
+            > * {
+
+            }
+        }
+        // Top right placement
+        &.right {
+            > * {
+
+            }
+        }
+    }
+
+    // All left positions.
+    &.left, &:not(.right) {
+        left: 16px;
+        > * {
+            float: left;
+            transform: translate3d(0, 0, 0);
+            height: auto;
+
+            &.show {
+                left: 0;
+            }
+            &, &.hide {
+                left: -110%;
+            }
+        }
+    }
+
+    &.right {
+        right: 16px;
+        > * {
+            float: right;
+            transform: translate3d(0, 0, 0);
+            &.show {
+                right: 0;
+                opacity: 1;
+            }
+            &, &.hide {
+                right: -110%;
+                opacity: 0;
+            }
+        }
+    }
+
+    &.top {
+        top: 0;
+        // Top left placement, use for transitions.
+        &.left, &:not(.right) {
+            > * {
+
+            }
+        }
+        // Top right placement, use for transitions
+        &.right {
+            > * {
+
+            }
+        }
+    }
+
+    > * {
+        box-sizing: border-box;
+        transition: all .4s cubic-bezier(.25, .8, .25, 1);
+        position: relative;
+        clear: both;
+        backface-visibility: hidden;
+	    perspective: 1000;
+
+        & {
+            max-height: 0;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        &.show {
+            margin-top: $padding-base;
+            opacity: 1;
+            max-height: 1000px;
+            padding: $padding-base;
+            pointer-events: auto;
+        }
+    }
+
+}
